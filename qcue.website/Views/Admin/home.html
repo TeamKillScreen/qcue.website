@@ -1,0 +1,15 @@
+﻿<div class="jumbotron">
+    <h1>Admin of Qcue.me</h1>
+    <p class="lead">Root admin of all queues.</p>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Current Queues</h2>
+
+        <ul>
+            <li data-ng-repeat="(key, queue) in queues">
+                <a href="#queue-detail?id={{key}}">{{queue.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -138,12 +138,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Controllers\about.js" />
+    <Content Include="Controllers\Admin\home.js" />
+    <Content Include="Controllers\Admin\queue-detail.js" />
+    <Content Include="Controllers\Shared\user.js" />
     <Content Include="Controllers\contact.js" />
     <Content Include="Controllers\queue-detail.js" />
-    <Content Include="Controllers\user.js" />
+    <Content Include="Scripts\admin.js" />
     <Content Include="Views\about.html" />
     <Content Include="Controllers\home.js" />
     <Content Include="favicon.ico" />
@@ -467,6 +471,8 @@
     <Content Include="Scripts\ui-bootstrap-tpls-0.6.0.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.6.0.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Admin\home.html" />
+    <Content Include="Views\Admin\queue-detail.html" />
     <Content Include="Views\contact.html" />
     <Content Include="Views\home.html" />
     <Content Include="Views\queue-detail.html" />

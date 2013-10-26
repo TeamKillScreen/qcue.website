@@ -36,11 +36,20 @@ namespace QCue.Web
             // App bundle with no default minify.
             var appBundle = new ScriptBundle("~/bundles/app").Include(
                       "~/Scripts/app.js",
-                      "~/Controllers/*.js");
+                      "~/Controllers/*.js",
+                      "~/Controllers/Shared/*.js");
 
             appBundle.Transforms.Clear();
             bundles.Add(appBundle);
 
+            // Admin bundle with no default minify.
+            var adminBundle = new ScriptBundle("~/bundles/admin").Include(
+                      "~/Scripts/admin.js",
+                      "~/Controllers/admin/*.js",
+                      "~/Controllers/Shared/*.js");
+
+            adminBundle.Transforms.Clear();
+            bundles.Add(adminBundle);
         }
     }
 }
