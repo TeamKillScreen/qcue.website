@@ -126,6 +126,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\QueuesController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Firebase\QBase.cs" />
     <Compile Include="Models\IncomingSmsMessage.cs" />
     <Compile Include="Controllers\Incoming_SmsController.cs" />

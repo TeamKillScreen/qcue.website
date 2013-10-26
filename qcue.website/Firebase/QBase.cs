@@ -52,7 +52,7 @@ namespace QCue.Web.Firebase
             };
         }
 
-        public User GetUserByMobileNumber(string mobile)
+        public User GetUserByMobile(string mobile)
         {
             var users = this.GetAllUsers();
 

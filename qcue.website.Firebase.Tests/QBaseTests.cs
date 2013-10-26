@@ -57,7 +57,7 @@ namespace QCue.Web.Firebase.Tests
             string mobile = "4455523456789";
             var qbase = new QBase("https://qcue-live.firebaseio.com");
 
-            User user = qbase.GetUserByMobileNumber(mobile);
+            User user = qbase.GetUserByMobile(mobile);
 
             Assert.IsNotNull(user);
             Assert.AreEqual(mobile, user.mobile);
@@ -70,7 +70,7 @@ namespace QCue.Web.Firebase.Tests
             var qbase = new QBase("https://qcue-live.firebaseio.com");
 
             Q q = qbase.GetQueueByShortCode("HELI");
-            User user = qbase.GetUserByMobileNumber("4455523456789");
+            User user = qbase.GetUserByMobile("4455523456789");
 
             qbase.AddUserToQueue(q.queueId, new QUser
             {
