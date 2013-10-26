@@ -12,6 +12,7 @@ namespace QCue.Web.Firebase.Tests
     public class QBaseTests
     {
         [TestMethod]
+        [Ignore]
         public void Returns_All_Queues()
         {
             var qbase = new QBase("https://qcue-live.firebaseio.com");
@@ -23,6 +24,7 @@ namespace QCue.Web.Firebase.Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void Returns_Q_For_ShortCode()
         {
             string shortCode = "HELI";
@@ -37,6 +39,7 @@ namespace QCue.Web.Firebase.Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void Return_All_Users()
         {
             var qbase = new QBase("https://qcue-live.firebaseio.com");
@@ -48,6 +51,7 @@ namespace QCue.Web.Firebase.Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void Returns_User_For_MobileNumber()
         {
             string mobile = "4477123456789";
@@ -60,6 +64,7 @@ namespace QCue.Web.Firebase.Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void Adds_User_To_Queue()
         {
             var qbase = new QBase("https://qcue-live.firebaseio.com");
@@ -68,10 +73,29 @@ namespace QCue.Web.Firebase.Tests
             User user = qbase.GetUserByMobileNumber("4477123456789");
 
             qbase.AddUserToQueue(q.queueId, new QUser
+            {
+                userId = user.userId,
+                status = "waiting"
+            });
+        }
+
+        [TestMethod]
+        public void Adds_Sms_Task()
+        {
+            var smsTask = new SmsTask
+            {
+                smsTaskId = Convert.ToString(Guid.NewGuid()),
+                task = "sms",
+                payload = new SmsTaskPayload
                 {
-                    userId = user.userId,
-                    status = "waiting"
-                });
+                    mobile = "447985222260",
+                    message = "Hello+World."                  
+                }
+            };
+
+            var qbase = new QBase("https://qcue-live.firebaseio.com");
+
+            qbase.AddTask(smsTask);
         }
     }
 }

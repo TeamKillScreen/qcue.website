@@ -103,5 +103,10 @@ namespace QCue.Web.Firebase
 
             result.EnsureSuccessStatusCode();
         }
+
+        public void AddTask(ITask task)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
