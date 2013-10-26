@@ -24,15 +24,6 @@ namespace QCue.Web
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            // Angular with no default minify.
-            var angularBundle = new ScriptBundle("~/bundles/angular").Include(
-                      "~/Scripts/angular.js",
-                      "~/Scripts/angular-sanitize.js",
-                      "~/Scripts/ui-bootstrap-tpls-0.6.0.js");
-
-            angularBundle.Transforms.Clear();
-            bundles.Add(angularBundle);
-
             // App bundle with no default minify.
             var appBundle = new ScriptBundle("~/bundles/app").Include(
                       "~/Scripts/app.js",
