@@ -17,23 +17,53 @@ namespace QCue.Web.Controllers
         {
             Trace.TraceInformation("Message: {0}", message);
 
+            /*
             if (this.ModelState.IsValid)
             {
+                Trace.TraceInformation("Message: {0}", message);
                 return Request.CreateResponse(HttpStatusCode.BadRequest, this.ModelState);
             }
+            */
 
             var qbase = new QBase("https://qcue-live.firebaseio.com");
 
             var q = qbase.GetQueueByShortCode(message.Content);
+
+            if (q == null)
+            {
+                string errorMessage = String.Format(
+                    "No such queue: \"{0}\".", message.Content);
+
+                var invalidQueueResponse = new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent(errorMessage),
+                    ReasonPhrase = errorMessage
+                };
+
+                throw new HttpResponseException(invalidQueueResponse);
+            }
+
             var user = qbase.GetUserByMobileNumber(message.From);
+            string status = null;
+
+            if (user == null)
+            {
+                user = qbase.AddAnonymousUser(message.From);
+                // TODO: status = "registering";
+                status = "joined";
+            }
+            else
+            {
+                status = "joined";
+            }
 
             qbase.AddUserToQueue(q.queueId, new QUser
             {
                 userId = user.userId,
-                status = "waiting"
+                status = status
             });
 
-            var response = Request.CreateResponse(HttpStatusCode.OK);
+            var response = this.Request.CreateResponse(HttpStatusCode.OK);
 
             return response;
         }

@@ -97,5 +97,18 @@ namespace QCue.Web.Firebase.Tests
 
             qbase.AddTask(smsTask);
         }
+
+        [TestMethod]
+        public void Anonymous_User_Is_Added()
+        {
+            var qbase = new QBase("https://qcue-live.firebaseio.com");
+
+            var user = qbase.AddAnonymousUser("449999999999");
+
+            Assert.IsNotNull(user);
+            Assert.IsNotNull(user.userId);
+            Assert.IsNotNull(user.fullName);
+            Assert.IsNotNull(user.mobile);
+        }
     }
 }

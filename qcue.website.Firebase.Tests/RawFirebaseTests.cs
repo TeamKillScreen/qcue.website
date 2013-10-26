@@ -21,8 +21,8 @@ namespace QCue.Web.Firebase.Tests
             client.BaseAddress = new Uri("https://qcue-live.firebaseio.com");
 
             var response = client.GetAsync("queues.json").Result;
-
             response.EnsureSuccessStatusCode();
+
 
             var queues = response.Content.ReadAsAsync<Dictionary<string, Q>>().Result;
 
