@@ -115,6 +115,7 @@ namespace QCue.Web.Controllers
             string fullName = message.Content.Substring(NameTag.Length).Trim();
 
             user.fullName = fullName;
+            user.status = "registered";
 
             qbase.UpdateUser(user);
 

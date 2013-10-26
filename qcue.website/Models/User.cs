@@ -10,5 +10,7 @@ namespace QCue.Web.Models
         public string userId { get; set; }
         public string fullName { get; set; }
         public string mobile { get; set; }
+
+        public string status { get; set; }
     }
 }
