@@ -1,4 +1,4 @@
-﻿angular.module('app', ['firebase', 'ui.bootstrap'])
+﻿angular.module('app', ['ngRoute', 'ngAnimate', 'firebase'])
     .config(function ($routeProvider) {
         $routeProvider.
             when('/', { templateUrl: 'views/admin/home.html', controller: HomeController }).
