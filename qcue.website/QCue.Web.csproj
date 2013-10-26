@@ -147,6 +147,7 @@
     <Content Include="Controllers\about.js" />
     <Content Include="Controllers\Admin\home.js" />
     <Content Include="Controllers\Admin\queue-detail.js" />
+    <Content Include="Controllers\join-queue.js" />
     <Content Include="Controllers\Shared\user.js" />
     <Content Include="Controllers\contact.js" />
     <Content Include="Controllers\queue-detail.js" />
@@ -478,6 +479,7 @@
     <Content Include="Views\Admin\queue-detail.html" />
     <Content Include="Views\contact.html" />
     <Content Include="Views\home.html" />
+    <Content Include="Views\join-queue.html" />
     <Content Include="Views\queue-detail.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

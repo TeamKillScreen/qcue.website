@@ -5,7 +5,8 @@
             when('/home', { templateUrl: 'views/home.html', controller: HomeController }).
             when('/about', { templateUrl: 'views/about.html', controller: AboutController }).
             when('/contact', { templateUrl: 'views/contact.html', controller: ContactController }).
-            when('/queue-detail', { templateUrl: 'views/queue-detail.html', controller: QueueDetailController })
+            when('/queue-detail', { templateUrl: 'views/queue-detail.html', controller: QueueDetailController }).
+            when('/join-queue', { templateUrl: 'views/join-queue.html', controller: JoinQueueController })
         ;
     });
 
