@@ -26,42 +26,58 @@ namespace QCue.Web.Controllers
             */
 
             var qbase = new QBase("https://qcue-live.firebaseio.com");
-
-            var q = qbase.GetQueueByShortCode(message.Content);
-
-            if (q == null)
-            {
-                string errorMessage = String.Format(
-                    "No such queue: \"{0}\".", message.Content);
-
-                var invalidQueueResponse = new HttpResponseMessage(HttpStatusCode.BadRequest)
-                {
-                    Content = new StringContent(errorMessage),
-                    ReasonPhrase = errorMessage
-                };
-
-                throw new HttpResponseException(invalidQueueResponse);
-            }
-
             var user = qbase.GetUserByMobileNumber(message.From);
-            string status = null;
 
-            if (user == null)
+            // TODO: REFACTOR!
+            if (message.Content.ToUpper().StartsWith("NAME"))
             {
-                user = qbase.AddAnonymousUser(message.From);
-                // TODO: status = "registering";
-                status = "joined";
+                string fullName = message.Content.Substring(4).Trim();
+
+                user.fullName = fullName;
+
+                qbase.UpdateUser(user);
+
+                Trace.TraceInformation(
+                    "Updated user.fulName for \"{0}\" to \"{1}\"", user.userId, user.fullName);
             }
             else
             {
-                status = "joined";
-            }
 
-            qbase.AddUserToQueue(q.queueId, new QUser
-            {
-                userId = user.userId,
-                status = status
-            });
+                var q = qbase.GetQueueByShortCode(message.Content);
+
+                if (q == null)
+                {
+                    string errorMessage = String.Format(
+                        "No such queue: \"{0}\".", message.Content);
+
+                    var invalidQueueResponse = new HttpResponseMessage(HttpStatusCode.BadRequest)
+                    {
+                        Content = new StringContent(errorMessage),
+                        ReasonPhrase = errorMessage
+                    };
+
+                    throw new HttpResponseException(invalidQueueResponse);
+                }
+
+                string status = null;
+
+                if (user == null)
+                {
+                    user = qbase.AddAnonymousUser(message.From);
+                    // TODO: status = "registering";
+                    status = "joined";
+                }
+                else
+                {
+                    status = "joined";
+                }
+
+                qbase.AddUserToQueue(q.queueId, new QUser
+                {
+                    userId = user.userId,
+                    status = status
+                });
+            }
 
             var response = this.Request.CreateResponse(HttpStatusCode.OK);
 

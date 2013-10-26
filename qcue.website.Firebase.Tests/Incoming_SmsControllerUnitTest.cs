@@ -23,5 +23,21 @@ namespace qcue.website.Firebase.Tests
 
             controller.Get(incomingSmsMessage);
         }
+
+        [TestMethod]
+        public void User_Full_Name_Is_Updated()
+        {
+            var controller = new Incoming_SmsController();
+
+            var incomingSmsMessage = new IncomingSmsMessage
+            {
+                From = "449999999999",
+                To = "447860033153",
+                Msg_Id = Convert.ToString(Guid.NewGuid()),
+                Content = "NAME Alice Bing"
+            };
+
+            controller.Get(incomingSmsMessage);
+        }
     }
 }
