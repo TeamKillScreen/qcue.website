@@ -11,7 +11,7 @@
 
         <ul>
             <li data-ng-repeat="(key, queue) in queues">
-                {{key}}
+                <a href="#queue-detail?id={{key}}">{{queue.name}}</a>
             </li>
         </ul>
     </div>

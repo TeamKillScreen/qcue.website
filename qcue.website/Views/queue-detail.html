@@ -1,0 +1,12 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h2>Queue Detail - {{queue.name}}</h2>
+        <p>{{queue.details}}</p>
+
+        <ul>
+            <li data-ng-repeat="(timestamp, users) in queue.users">
+                <p>Joined: {{timestamp}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
