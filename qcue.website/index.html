@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html data-ng-app="app">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
     <script src="bundles/angular"></script>
     <script src="//cdn.firebase.com/v0/firebase.js"></script>
     <script src="//cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js"></script>
+    <script src="bundles/app"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -21,7 +22,7 @@
                 </button>
                 <a href="#" class="navbar-brand">Qcue.me</a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" data-ng-controller="AppCntl">
                 <ul class="nav navbar-nav">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -31,10 +32,15 @@
         </div>
     </div>
     <div class="container body-content">
-        <hr />
-        <footer>
-            <p>&copy; 2013 - Qcue.me</p>
-        </footer>
+        <div class="starter-template">
+            {{$route.current.template}}
+
+            <div data-ng-view=""></div>
+            <hr />
+            <footer>
+                <p>&copy; 2013 - Qcue.me</p>
+            </footer>
+        </div>
     </div>
 
     <script src="bundles/jquery"></script>

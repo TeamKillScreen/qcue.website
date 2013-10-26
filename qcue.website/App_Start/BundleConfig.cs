@@ -24,9 +24,23 @@ namespace qcue.website
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+            // Angular with no default minify.
+            var angularBundle = new ScriptBundle("~/bundles/angular").Include(
                       "~/Scripts/angular.js",
-                      "~/Scripts/angular-bootstrap.js"));
+                      "~/Scripts/angular-sanitize.js",
+                      "~/Scripts/ui-bootstrap-tpls-0.6.0.js");
+
+            angularBundle.Transforms.Clear();
+            bundles.Add(angularBundle);
+
+            // App bundle with no default minify.
+            var appBundle = new ScriptBundle("~/bundles/app").Include(
+                      "~/Scripts/app.js",
+                      "~/Controllers/*.js");
+
+            appBundle.Transforms.Clear();
+            bundles.Add(appBundle);
+
         }
     }
 }
