@@ -28,7 +28,7 @@ namespace QCue.Web.Controllers
             */
 
             var qbase = new QBase("https://qcue-live.firebaseio.com");
-            var user = qbase.GetUserByMobileNumber(message.From);
+            var user = qbase.GetUserByMobile(message.From);
 
             // this.EnsureUserIsKnown(message, user);
 
@@ -115,6 +115,7 @@ namespace QCue.Web.Controllers
             string fullName = message.Content.Substring(NameTag.Length).Trim();
 
             user.fullName = fullName;
+            user.status = "registered";
 
             qbase.UpdateUser(user);
 
