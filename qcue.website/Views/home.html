@@ -8,5 +8,11 @@
 <div class="row">
     <div class="col-md-12">
         <h2>Current Queues</h2>
+
+        <ul>
+            <li data-ng-repeat="(key, queue) in queues">
+                {{key}}
+            </li>
+        </ul>
     </div>
 </div>
