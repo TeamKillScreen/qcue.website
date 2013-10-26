@@ -3,7 +3,7 @@
         $routeProvider.
             when('/', { templateUrl: 'views/admin/home.html', controller: HomeController }).
             when('/home', { templateUrl: 'views/admin/home.html', controller: HomeController }).
-            when('/queue-detail', { templateUrl: 'views/queue-detail.html', controller: QueueDetailController })
+            when('/queue-detail', { templateUrl: 'views/admin/queue-detail.html', controller: QueueDetailController })
         ;
     });
 
