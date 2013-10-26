@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using QCue.Web.Models;
+using QCue.Web.Firebase;
 
 namespace QCue.Web.Controllers
 {
@@ -17,6 +18,17 @@ namespace QCue.Web.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, this.ModelState);
             }
+
+            var qbase = new QBase("https://qcue-live.firebaseio.com");
+
+            var q = qbase.GetQueueByShortCode(message.Content);
+            var user = qbase.GetUserByMobileNumber(message.From);
+
+            qbase.AddUserToQueue(q.queueId, new QUser
+            {
+                userId = user.userId,
+                status = "waiting"
+            });
 
             var response = Request.CreateResponse(HttpStatusCode.OK);
 
