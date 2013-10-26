@@ -7,7 +7,8 @@ namespace QCue.Web.Models
 {
     public class User
     {
-        public string FullName { get; set; }
-        public string Mobile { get; set; }
+        public string userId { get; set; }
+        public string fullName { get; set; }
+        public string mobile { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if NEVER
+
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -79,3 +81,5 @@ namespace QCue.Web.Firebase.Tests
         }
     }
 }
+
+#endif

@@ -8,7 +8,7 @@ namespace QCue.Web.Models
 {
     public class QUser
     {
-        public string Id { get; set; }
-        public string State { get; set; }
+        public string userId { get; set; }
+        public string status { get; set; }
     }
 }

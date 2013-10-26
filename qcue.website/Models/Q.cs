@@ -7,7 +7,10 @@ namespace QCue.Web.Models
 {
     public class Q
     {
-        public string ShortCode { get; set; }
-        public Dictionary<string, QUser> Users { get; set; }
+        public string queueId { get; set; }
+        public string name { get; set; }
+        public string shortCode { get; set; }
+
+        public Dictionary<string, QUser> users { get; set; }
     }
 }
