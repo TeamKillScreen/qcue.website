@@ -143,6 +143,7 @@
     <Content Include="Controllers\about.js" />
     <Content Include="Controllers\contact.js" />
     <Content Include="Controllers\queue-detail.js" />
+    <Content Include="Controllers\user.js" />
     <Content Include="Views\about.html" />
     <Content Include="Controllers\home.js" />
     <Content Include="favicon.ico" />

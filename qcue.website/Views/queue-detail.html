@@ -4,7 +4,10 @@
         <p>{{queue.details}}</p>
 
         <ul>
-            <li data-ng-repeat="(timestamp, users) in queue.users">
+            <li data-ng-repeat="(timestamp, user) in queue.users">
+                <div data-ng-controller="UserController" ng-init="init(user.userId)">
+                    {{user.fullName}}
+                </div>
                 <p>Joined: {{timestamp}}</p>
             </li>
         </ul>
