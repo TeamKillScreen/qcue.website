@@ -12,12 +12,14 @@ namespace QCue.Web.Controllers
     public class Incoming_SmsController : ApiController
     {
         // GET: http://www.qcue.me/api/incoming_sms?to=447860033153&from=441234567890&content=Hello+World&msg_id=AB_12345
-        public HttpResponseMessage Get(IncomingSmsMessage message)
+        public HttpResponseMessage Get([FromUri]IncomingSmsMessage message)
         {
+            /*
             if (this.ModelState.IsValid)
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, this.ModelState);
             }
+            */
 
             var qbase = new QBase("https://qcue-live.firebaseio.com");
 

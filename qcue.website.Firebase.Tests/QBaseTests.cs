@@ -25,7 +25,7 @@ namespace QCue.Web.Firebase.Tests
         [TestMethod]
         public void Returns_Q_For_ShortCode()
         {
-            string shortCode = "BACN";
+            string shortCode = "HELI";
 
             var qbase = new QBase("https://qcue-live.firebaseio.com");
 
@@ -64,7 +64,7 @@ namespace QCue.Web.Firebase.Tests
         {
             var qbase = new QBase("https://qcue-live.firebaseio.com");
 
-            Q q = qbase.GetQueueByShortCode("BACN");
+            Q q = qbase.GetQueueByShortCode("HELI");
             User user = qbase.GetUserByMobileNumber("4477123456789");
 
             qbase.AddUserToQueue(q.queueId, new QUser
