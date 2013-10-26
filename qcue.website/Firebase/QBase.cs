@@ -133,5 +133,21 @@ namespace QCue.Web.Firebase
 
             return user;
         }
+
+        public void UpdateUser(User user)
+        {
+            var client = new HttpClient();
+
+            client.BaseAddress = new Uri(_baseAddress);
+
+            string format = "users/{0}.json";
+
+            string uri = String.Format(format, user.userId);
+
+            var json = JsonConvert.SerializeObject(user);
+            var result = client.PutAsJsonAsync(uri, user).Result;
+
+            result.EnsureSuccessStatusCode();
+        }
     }
 }

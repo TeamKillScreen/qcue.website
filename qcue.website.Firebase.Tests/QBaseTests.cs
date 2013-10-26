@@ -80,6 +80,7 @@ namespace QCue.Web.Firebase.Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void Adds_Sms_Task()
         {
             var smsTask = new SmsTask
@@ -99,6 +100,7 @@ namespace QCue.Web.Firebase.Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void Anonymous_User_Is_Added()
         {
             var qbase = new QBase("https://qcue-live.firebaseio.com");
@@ -109,6 +111,21 @@ namespace QCue.Web.Firebase.Tests
             Assert.IsNotNull(user.userId);
             Assert.IsNotNull(user.fullName);
             Assert.IsNotNull(user.mobile);
+        }
+
+        [TestMethod]
+        public void User_Is_Updated()
+        {
+            var qbase = new QBase("https://qcue-live.firebaseio.com");
+
+            var user = new User
+            {
+                userId = "0e5d2d51-2bf7-4c1e-9d1a-952710f70725",
+                fullName = "Alice Whyte",
+                mobile = "4477123456789"
+            };
+
+            qbase.UpdateUser(user);
         }
     }
 }
