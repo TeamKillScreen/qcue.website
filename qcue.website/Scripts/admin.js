@@ -1,9 +1,9 @@
-﻿angular.module('app', ['firebase', 'ui.bootstrap'])
+﻿angular.module('app', ['ngRoute', 'ngAnimate', 'firebase'])
     .config(function ($routeProvider) {
         $routeProvider.
             when('/', { templateUrl: 'views/admin/home.html', controller: HomeController }).
             when('/home', { templateUrl: 'views/admin/home.html', controller: HomeController }).
-            when('/queue-detail', { templateUrl: 'views/queue-detail.html', controller: QueueDetailController })
+            when('/queue-detail', { templateUrl: 'views/admin/queue-detail.html', controller: QueueDetailController })
         ;
     });
 

@@ -9,6 +9,20 @@
                     {{user.fullName}}
                 </div>
                 <p>Joined: {{timestamp}}</p>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-lg" data-ng-click="holding(timestamp)">
+                        <span class="glyphicon glyphicon-pause"></span> Hold
+                    </button>
+                    <button type="button" class="btn btn-default btn-lg" data-ng-click="waiting(timestamp)">
+                        <span class="glyphicon glyphicon-arrow-left"></span> Waiting
+                    </button>
+                    <button type="button" class="btn btn-default btn-lg" data-ng-click="servicing(timestamp)">
+                        <span class="glyphicon glyphicon-arrow-right"></span> Servicing
+                    </button>
+                    <button type="button" class="btn btn-default btn-lg" data-ng-click="serviced(timestamp)">
+                        <span class="glyphicon glyphicon-ok-sigh"></span> Serviced
+                    </button>
+                </div>
             </li>
         </ul>
     </div>
