@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace qcue.website
+namespace QCue.Web
 {
     public class RouteConfig
     {

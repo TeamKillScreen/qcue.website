@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace qcue.website
+namespace QCue.Web
 {
     public class FilterConfig
     {

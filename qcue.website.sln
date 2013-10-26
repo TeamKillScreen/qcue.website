@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qcue.website", "qcue.website\qcue.website.csproj", "{5E86928A-074B-4813-BF11-E44ACC48B8DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QCue.Web", "qcue.website\QCue.Web.csproj", "{5E86928A-074B-4813-BF11-E44ACC48B8DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qcue.website.Tests", "..\..\Visual Studio 2013\Projects\qcue.website\qcue.website.Tests\qcue.website.Tests.csproj", "{AC9045AA-AD83-4156-93C5-9E1EF4183119}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QCue.Web.Firebase.Tests", "qcue.website.Firebase.Tests\QCue.Web.Firebase.Tests.csproj", "{53B43136-77CE-4C54-BFD0-8DE649A5D8DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AC9045AA-AD83-4156-93C5-9E1EF4183119}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC9045AA-AD83-4156-93C5-9E1EF4183119}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC9045AA-AD83-4156-93C5-9E1EF4183119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B43136-77CE-4C54-BFD0-8DE649A5D8DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B43136-77CE-4C54-BFD0-8DE649A5D8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B43136-77CE-4C54-BFD0-8DE649A5D8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B43136-77CE-4C54-BFD0-8DE649A5D8DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

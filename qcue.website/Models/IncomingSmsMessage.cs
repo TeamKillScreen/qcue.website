@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
-namespace qcue.website.Controllers
+namespace QCue.Web.Models
 {
     public class IncomingSmsMessage
     {

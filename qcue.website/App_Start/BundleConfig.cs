@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace qcue.website
+namespace QCue.Web
 {
     public class BundleConfig
     {
