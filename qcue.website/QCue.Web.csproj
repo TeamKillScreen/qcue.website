@@ -132,8 +132,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ITask.cs" />
     <Compile Include="Models\Q.cs" />
     <Compile Include="Models\QUser.cs" />
+    <Compile Include="Models\SmsTask.cs" />
+    <Compile Include="Models\SmsTaskPayload.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

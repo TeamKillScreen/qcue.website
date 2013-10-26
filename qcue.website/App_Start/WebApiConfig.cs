@@ -11,6 +11,11 @@ namespace QCue.Web
         {
             // Web API configuration and services
 
+            // JSON-only
+            var formatters = GlobalConfiguration.Configuration.Formatters;
+
+            formatters.Remove(formatters.XmlFormatter);
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 

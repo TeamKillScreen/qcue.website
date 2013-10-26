@@ -19,5 +19,13 @@ namespace QCue.Web.Models
 
         [Required]
         public string Content { get; set; }
+
+        public override string ToString()
+        {
+            string format = "Msg_Id = \"{0}\", To = \"{1}\", From = \"{2}\", Content = \"{3}\"";
+
+            return String.Format(
+                format, this.Msg_Id, this.To, this.From, this.Content);
+        }
     }
 }

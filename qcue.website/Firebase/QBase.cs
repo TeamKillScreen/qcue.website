@@ -103,5 +103,35 @@ namespace QCue.Web.Firebase
 
             result.EnsureSuccessStatusCode();
         }
+
+        public void AddTask(ITask task)
+        {
+            throw new NotImplementedException();
+        }
+
+        public User AddAnonymousUser(string mobile)
+        {
+            var client = new HttpClient();
+
+            var user = new User
+            {
+                userId = Convert.ToString(Guid.NewGuid()),
+                fullName = "Anonymous",
+                mobile = mobile
+            };
+
+            client.BaseAddress = new Uri(_baseAddress);
+
+            string format = "users/{0}.json";
+
+            string uri = String.Format(format, user.userId);
+
+            var json = JsonConvert.SerializeObject(user);
+            var result = client.PutAsJsonAsync(uri, user).Result;
+
+            result.EnsureSuccessStatusCode();
+
+            return user;
+        }
     }
 }
