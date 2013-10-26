@@ -3,13 +3,13 @@
         <h2>{{queue.name}}</h2>
         <p>{{queue.details}}</p>
 
-        <ul>
-            <li data-ng-repeat="(timestamp, user) in queue.users" class="repeat-item">
+        <div>
+            <div data-ng-repeat="(timestamp, user) in queue.users" class="repeat-item well well-lg">
                 <div data-ng-controller="UserController" ng-init="init(user.userId)">
                     {{user.fullName}}
                 </div>
                 <p>Joined: {{timestamp}}</p>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </div>
