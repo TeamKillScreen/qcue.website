@@ -30,7 +30,7 @@ namespace QCue.Web.Controllers
             var qbase = new QBase("https://qcue-live.firebaseio.com");
             var user = qbase.GetUserByMobileNumber(message.From);
 
-            this.EnsureUserIsKnown(message, user);
+            // this.EnsureUserIsKnown(message, user);
 
             if (this.IsUpdateUserMessage(message))
             {
