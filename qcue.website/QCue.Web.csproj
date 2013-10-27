@@ -126,6 +126,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\QController.cs" />
     <Compile Include="Controllers\QueuesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Firebase\QBase.cs" />
@@ -496,6 +497,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\QRedirect\" />
     <Folder Include="Views\Q\" />
   </ItemGroup>
   <ItemGroup>
