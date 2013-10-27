@@ -80,6 +80,7 @@ namespace QCue.Web.Controllers
             }
             else
             {
+                /*
                 var usersInQueue = qbase.GetUsersInQueue(q.queueId);
 
                 if (usersInQueue.Count(each => each.userId == user.userId) != 0)
@@ -92,6 +93,7 @@ namespace QCue.Web.Controllers
                     Trace.TraceWarning(warningMessage);
                     return;
                 }
+                */
 
                 status = "joined";
             }
