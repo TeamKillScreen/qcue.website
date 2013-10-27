@@ -9,10 +9,8 @@
     <div class="col-md-12">
         <h2>Current Queues</h2>
 
-        <ul>
-            <li data-ng-repeat="(key, queue) in queues">
-                <a href="#queue-detail?id={{key}}">{{queue.name}}</a>
-            </li>
-        </ul>
+        <div data-ng-repeat="(key, queue) in queues" class="well well-lg">
+            <h2><a href="#queue-detail?id={{key}}">{{queue.name}}</a></h2>
+        </div>
     </div>
 </div>
