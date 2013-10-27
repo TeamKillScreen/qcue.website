@@ -36,6 +36,8 @@ namespace QCue.Web.Firebase
         {
             var queues = this.GetAllQueues();
 
+            shortCode = shortCode.Trim();
+
             var keyValue = queues.FirstOrDefault(each => each.Value.shortCode.Equals(
                 shortCode, StringComparison.InvariantCultureIgnoreCase));
 
