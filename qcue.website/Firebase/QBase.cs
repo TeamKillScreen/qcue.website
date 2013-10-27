@@ -89,6 +89,32 @@ namespace QCue.Web.Firebase
             return users;
         }
 
+        public List<QUser> GetUsersInQueue(string queueId)
+        {
+            var client = new HttpClient();
+
+            client.BaseAddress = new Uri(_baseAddress);
+
+            string format = "queues/{0}";
+            string uri = String.Format(format, queueId);
+
+            var response = client.GetAsync("users.json").Result;
+
+            response.EnsureSuccessStatusCode();
+
+            var keyValue = response.Content.ReadAsAsync<IDictionary<string, QUser>>().Result;
+
+            var qusers = keyValue.Select(quser =>
+                new QUser
+                {
+                    userId = quser.Key,
+                    status = quser.Value.status
+                }
+            ).ToList();
+
+            return qusers;
+        }
+
         public void AddUserToQueue(string queueId, QUser quser)
         {
             var client = new HttpClient();

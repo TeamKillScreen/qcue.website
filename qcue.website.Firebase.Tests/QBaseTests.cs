@@ -114,6 +114,7 @@ namespace QCue.Web.Firebase.Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void User_Is_Updated()
         {
             var qbase = new QBase("https://qcue-live.firebaseio.com");
@@ -126,6 +127,17 @@ namespace QCue.Web.Firebase.Tests
             };
 
             qbase.UpdateUser(user);
+        }
+ 
+        [TestMethod]
+        public void Returns_Users_In_Queue()
+        {
+            var qbase = new QBase("https://qcue-test.firebaseio.com");
+
+            var users = qbase.GetUsersInQueue("b555e232-6756-4816-89fe-f6f690e8ab5b");
+
+            Assert.IsNotNull(users);
+            Assert.IsTrue(users.Count > 0);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace QCue.Web.Controllers
             }
             else
             {
-                user = this.QueueUser(message, qbase, user);
+                this.QueueUser(message, qbase, user);
             }
 
             var response = this.Request.CreateResponse(HttpStatusCode.OK);
@@ -64,7 +64,7 @@ namespace QCue.Web.Controllers
             }
         }
 
-        private User QueueUser(IncomingSmsMessage message, QBase qbase, User user)
+        private void QueueUser(IncomingSmsMessage message, QBase qbase, User user)
         {
             var q = qbase.GetQueueByShortCode(message.Content);
 
@@ -80,6 +80,21 @@ namespace QCue.Web.Controllers
             }
             else
             {
+                /*
+                var usersInQueue = qbase.GetUsersInQueue(q.queueId);
+
+                if (usersInQueue.Count(each => each.userId == user.userId) != 0)
+                {
+                    string warningMessage = String.Format(
+                        "User \"{0}\" is already in queue \"{1}\". User will not be added again.",
+                        user.userId,
+                        q.queueId);
+
+                    Trace.TraceWarning(warningMessage);
+                    return;
+                }
+                */
+
                 status = "joined";
             }
 
@@ -88,8 +103,6 @@ namespace QCue.Web.Controllers
                 userId = user.userId,
                 status = status
             });
-
-            return user;
         }
 
         private void EnsureQueueIsKnown(IncomingSmsMessage message, Q q)
