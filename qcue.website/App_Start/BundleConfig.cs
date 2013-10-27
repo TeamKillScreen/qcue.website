@@ -28,7 +28,8 @@ namespace QCue.Web
             var appBundle = new ScriptBundle("~/bundles/app").Include(
                       "~/Scripts/app.js",
                       "~/Controllers/*.js",
-                      "~/Controllers/Shared/*.js");
+                      "~/Controllers/Shared/*.js",
+                      "~/Scripts/dateformat.js");
 
             appBundle.Transforms.Clear();
             bundles.Add(appBundle);
