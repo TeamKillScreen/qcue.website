@@ -84,8 +84,10 @@ namespace QCue.Web.Controllers
 
                 if (usersInQueue.Count(each => each.userId == user.userId) != 0)
                 {
-                    string warningMessage = String.Format("User \"{0}\" is already in queue \"{1}\". User will not be added again.",
-                        user.userId, q.queueId);
+                    string warningMessage = String.Format(
+                        "User \"{0}\" is already in queue \"{1}\". User will not be added again.",
+                        user.userId,
+                        q.queueId);
 
                     Trace.TraceWarning(warningMessage);
                     return;
