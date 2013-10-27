@@ -11,10 +11,11 @@
 <div class="col-md-12 users" >
     <div>
         <div data-ng-repeat="(timestamp, user) in queue.users" class="repeat-item well well-lg" data-ng-class="user.status">
-            <div data-ng-controller="UserController" ng-init="init(user.userId)">
+            <div class="usersname" data-ng-controller="UserController" ng-init="init(user.userId)">
                 {{user.fullName}}
             </div>
-            <p>Joined: {{timestamp}}</p>
+            <div class="joined">{{timestamp}}</div>
+            <div class="status">{{user.status}}</div>
         </div>
     </div>
 </div>

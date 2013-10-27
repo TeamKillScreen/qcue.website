@@ -73,3 +73,23 @@ input[type="checkbox"].input-validation-error {
 .users .waiting {
     background-color: lightblue;
 }
+
+.users {
+    font-size: 36px;
+}
+
+.users .repeat-item {
+    width: 100%;
+    overflow: hidden;
+}
+
+.users .repeat-item div {
+    display: inline;
+    float: left;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.users .repeat-item div.status {
+    float: right;
+}

@@ -1,30 +1,30 @@
-﻿<div class="row">
-    <div class="col-md-12 users">
+﻿<div class="jumbotron">
+    <div class="container">
         <h2>{{queue.name}}</h2>
         <p>{{queue.details}}</p>
-
-        <div>
-            <div data-ng-repeat="(timestamp, user) in queue.users" class="repeat-item well well-lg" data-ng-class="user.status">
-                <div data-ng-controller="UserController" ng-init="init(user.userId)">
-                    {{user.fullName}}
-                </div>
-                <p>Joined: {{timestamp}}</p>
-                <p>Status: {{user.status}}</p>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default btn-lg" data-ng-click="holding(timestamp)">
-                        <span class="glyphicon glyphicon-pause"></span> Hold
-                    </button>
-                    <button type="button" class="btn btn-default btn-lg" data-ng-click="waiting(timestamp)">
-                        <span class="glyphicon glyphicon-arrow-left"></span> Waiting
-                    </button>
-                    <button type="button" class="btn btn-default btn-lg" data-ng-click="servicing(timestamp)">
-                        <span class="glyphicon glyphicon-arrow-right"></span> Servicing
-                    </button>
-                    <button type="button" class="btn btn-default btn-lg" data-ng-click="serviced(timestamp)">
-                        <span class="glyphicon glyphicon-ok-sign"></span> Serviced
-                    </button>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
+
+<div class="col-md-12 users">    
+    <div data-ng-repeat="(timestamp, user) in queue.users" class="repeat-item well well-lg" data-ng-class="user.status">
+        <div class="usersname" data-ng-controller="UserController" ng-init="init(user.userId)">
+            {{user.fullName}}
+        </div>
+        <div class="joined">{{timestamp}}</div>
+        <div class="status">{{user.status}}</div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-lg" data-ng-click="holding(timestamp)">
+                <span class="glyphicon glyphicon-pause"></span> Hold
+            </button>
+            <button type="button" class="btn btn-default btn-lg" data-ng-click="waiting(timestamp)">
+                <span class="glyphicon glyphicon-arrow-left"></span> Waiting
+            </button>
+            <button type="button" class="btn btn-default btn-lg" data-ng-click="servicing(timestamp)">
+                <span class="glyphicon glyphicon-arrow-right"></span> Servicing
+            </button>
+            <button type="button" class="btn btn-default btn-lg" data-ng-click="serviced(timestamp)">
+                <span class="glyphicon glyphicon-ok-sign"></span> Serviced
+            </button>
+        </div>
+    </div>
+</div>  
