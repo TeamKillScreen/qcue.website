@@ -14,7 +14,7 @@
             <div class="usersname" data-ng-controller="UserController" ng-init="init(user.userId)">
                 {{user.fullName}}
             </div>
-            <div class="joined">{{timestamp}}</div>
+            <div class="joined">{{timestamp | date:"medium"}}</div>
             <div class="status">{{user.status}}</div>
         </div>
     </div>
