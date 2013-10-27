@@ -1,6 +1,8 @@
 ﻿function JoinQueueController($scope, $location, $routeParams, $http, $log, angularFire) {
     var queue = null;
 
+    $scope.tel = /^(07[\d]{8,12}|447[\d]{7,11})$/;
+
     $http.get('/api/queues/' + $routeParams.shortCode).success(function (returnedQueue) {
         queue = returnedQueue;
     })

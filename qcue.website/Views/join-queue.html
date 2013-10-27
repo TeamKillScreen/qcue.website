@@ -1,13 +1,15 @@
 ﻿<div class="container">
-    <form role="form">
-        <div class="form-group">
-            <label for="fullName">Full Name</label>
-            <input id="fullName" class="form-control" placeholder="e.g. Mr Soft" data-ng-model="new.fullname" required>
+    <form class="css-form">
+        <div ng-form="joinQueueForm">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input id="fullName" type="text" class="form-control" placeholder="e.g. Mr Soft" data-ng-model="new.fullname" size="100" required>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Mobile Number</label>
+                <input id="phoneNumber" type="tel" class="form-control" placeholder="e.g. 07712345678" data-ng-model="new.phonenumber" ng-pattern="tel" size="14" required> We need your mobile to keep you up to date.<br />Don't worry we won't keep it after Hack Manchester.
+            </div>
         </div>
-        <div class="form-group">
-            <label for="phoneNumber">Mobile Number</label>
-            <input id="phoneNumber" type="tel" class="form-control" placeholder="e.g. 07712345678" data-ng-model="new.phonenumber" required> We need your mobile to keep you up to date.<br />Don't worry we won't keep it after Hack Manchester.
-        </div>
-        <button type="submit" class="btn btn-lg btn-primary" ng-click="queueMe()">Queue</button>
+        <button type="submit" class="btn btn-lg btn-primary" ng-disabled="!joinQueueForm.$valid" ng-click="queueMe()">Queue</button>
     </form>
 </div>
