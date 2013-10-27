@@ -155,6 +155,9 @@
     <Content Include="Controllers\contact.js" />
     <Content Include="Controllers\queue-detail.js" />
     <Content Include="Scripts\admin.js" />
+    <Content Include="Scripts\speak\speakClient.js" />
+    <Content Include="Scripts\speak\speakGenerator.js" />
+    <Content Include="Scripts\speak\speakWorker.js" />
     <Content Include="Views\about.html" />
     <Content Include="Controllers\home.js" />
     <Content Include="favicon.ico" />
