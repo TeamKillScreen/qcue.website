@@ -13,6 +13,12 @@
     $scope.queueMe = function () {
         var userId = null;
 
+        // Protect against international numbers.
+        if ($scope.new.phonenumber.substring(0, 1) == '0')
+        {
+            $scope.new.phonenumber = '44' + $scope.new.phonenumber.substring(1, $scope.new.phonenumber.length);
+        }
+
         // Check if user already exists.
         $http.get('/api/users/' + $scope.new.phonenumber).success(function (returnedUser) {
 
@@ -21,6 +27,7 @@
                 // Insert user.
                 userId = guid();
                 var usersRef = new Firebase('https://qcue-live.firebaseio.com/users/' + userId + '/');
+
                 usersRef.set({ 'fullName': $scope.new.fullname, 'mobile': $scope.new.phonenumber, 'registrationTextSent': 'false' });
             }
             else {
