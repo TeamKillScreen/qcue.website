@@ -51,10 +51,12 @@ input[type="checkbox"].input-validation-error {
 
 .repeat-item.ng-enter,
 .repeat-item.ng-leave.ng-leave-active {
+  height: 0px;
   opacity:0;
 }
 .repeat-item.ng-leave,
 .repeat-item.ng-enter.ng-enter-active {
+  height: 100px;
   opacity:1;
 }
 
