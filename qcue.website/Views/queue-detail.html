@@ -1,20 +1,20 @@
-﻿<div class="row">
-    <div class="jumbotron">
+﻿<div class="jumbotron">
+    <div class="container">
         <h1>{{queue.name}}</h1>
         <p class="lead">{{queue.details}}</p>
         <p>
             <a href="#join-queue?shortCode={{queue.shortCode}}" class="btn btn-primary btn-large">Join Queue »</a>
         </p>
     </div>
+</div>
 
-    <div class="col-md-12 users">
-        <div>
-            <div data-ng-repeat="(timestamp, user) in queue.users" class="repeat-item well well-lg" data-ng-class="user.status">
-                <div data-ng-controller="UserController" ng-init="init(user.userId)">
-                    {{user.fullName}}
-                </div>
-                <p>Joined: {{timestamp}}</p>
+<div class="col-md-12 users" >
+    <div>
+        <div data-ng-repeat="(timestamp, user) in queue.users" class="repeat-item well well-lg" data-ng-class="user.status">
+            <div data-ng-controller="UserController" ng-init="init(user.userId)">
+                {{user.fullName}}
             </div>
+            <p>Joined: {{timestamp}}</p>
         </div>
     </div>
 </div>
