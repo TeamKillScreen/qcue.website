@@ -1,10 +1,10 @@
 ﻿<div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 users">
         <h2>{{queue.name}}</h2>
         <p>{{queue.details}}</p>
 
         <div>
-            <div data-ng-repeat="(timestamp, user) in queue.users" class="repeat-item well well-lg">
+            <div data-ng-repeat="(timestamp, user) in queue.users" class="repeat-item well well-lg" data-ng-class="user.status">
                 <div data-ng-controller="UserController" ng-init="init(user.userId)">
                     {{user.fullName}}
                 </div>

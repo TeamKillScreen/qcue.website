@@ -57,3 +57,19 @@ input[type="checkbox"].input-validation-error {
 .repeat-item.ng-enter.ng-enter-active {
   opacity:1;
 }
+
+.users .serviced {
+    background-color: darkblue;
+}
+
+.users .servicing {
+    background-color: lightgreen;
+}
+
+.users .holding {
+    background-color: lightgray;
+}
+
+.users .waiting {
+    background-color: lightblue;
+}
