@@ -98,16 +98,16 @@ namespace QCue.Web.Firebase
             string format = "queues/{0}";
             string uri = String.Format(format, queueId);
 
-            var response = client.GetAsync("users.json").Result;
+            var response = client.GetAsync("users/.json").Result;
 
             response.EnsureSuccessStatusCode();
 
-            var keyValue = response.Content.ReadAsAsync<IDictionary<string, QUser>>().Result;
+            var keyValues = response.Content.ReadAsAsync<Dictionary<string, QUser>>().Result;
 
-            var qusers = keyValue.Select(quser =>
+            var qusers = keyValues.Select(quser =>
                 new QUser
                 {
-                    userId = quser.Key,
+                    userId = quser.Value.userId,
                     status = quser.Value.status
                 }
             ).ToList();
